@@ -1,0 +1,598 @@
+@font-face {
+  font-family: 'American Captain';
+  src: url("../../fonts/amercapt.otf") format("opentype");
+  src: url("../../fonts/amercapt.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Falling Sky';
+  src: url("../../fonts/FallingSky.otf") format("opentype"); }
+
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article, aside, footer, header, nav, section {
+  display: block; }
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0; }
+
+figcaption, figure, main {
+  display: block; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+
+pre {
+  font-family: monospace,monospace;
+  font-size: 1em; }
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects; }
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; }
+
+b, strong {
+  font-weight: inherit; }
+
+b, strong {
+  font-weight: bolder; }
+
+code, kbd, samp {
+  font-family: monospace,monospace;
+  font-size: 1em; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -.25em; }
+
+sup {
+  top: -.5em; }
+
+audio, video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+img {
+  border-style: none; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0; }
+
+button, input {
+  overflow: visible; }
+
+button, select {
+  text-transform: none; }
+
+button, html[type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button; }
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+fieldset {
+  padding: .35em .75em .625em; }
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal; }
+
+progress {
+  display: inline-block;
+  vertical-align: baseline; }
+
+textarea {
+  overflow: auto; }
+
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0; }
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto; }
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; }
+
+details, menu {
+  display: block; }
+
+summary {
+  display: list-item; }
+
+canvas {
+  display: inline-block; }
+
+template {
+  display: none; }
+
+[hidden] {
+  display: none; }
+
+/*End Normalize*/
+/*Adding Clearfix*/
+.clearfix {
+  overflow: auto; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+/*End Clearfix*/
+/*Border Box*/
+* {
+  box-sizing: border-box; }
+
+/*End Border Box*/
+body {
+  font-family: "Falling Sky", sans-serif;
+  color: #090909;
+  background: #f5f5f5;
+  font-size: 16px; }
+
+header {
+  height: 50vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+  header.main-page-head {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../img/background.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed; }
+  header h3 {
+    display: none; }
+  header .mobile-menu {
+    display: none; }
+    header .mobile-menu a {
+      color: #f5f5f5; }
+  header .login {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    z-index: 10; }
+    header .login .exit-button {
+      display: none;
+      font-size: 20px; }
+      header .login .exit-button a {
+        background: #f5f5f5;
+        color: #ff7148; }
+        header .login .exit-button a:hover {
+          background: #f5f5f5;
+          color: #ff7148; }
+    header .login a {
+      padding: 10px 30px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      color: #f5f5f5;
+      background: #ff7148;
+      font-family: "American Captain", sans-serif;
+      transition: background 0.5s, border-radius 0.5s;
+      letter-spacing: 2px; }
+      header .login a:hover {
+        background: #ff4915;
+        border-radius: 5px; }
+    header .login div {
+      padding-right: 10px; }
+      header .login div input {
+        font-family: "Falling Sky", sans-serif;
+        background: rgba(245, 245, 245, 0.6);
+        border: 1px solid #ff7148;
+        padding: 7.5px 5px;
+        color: #090909;
+        margin-top: 5px;
+        width: 120px; }
+      header .login div:last-of-type {
+        padding-right: 0; }
+  header .wrapper {
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    height: 50vh; }
+    header .wrapper h1 {
+      font-family: "American Captain", sans-serif;
+      text-transform: uppercase;
+      font-size: 30rem;
+      position: absolute;
+      top: 50%;
+      margin: 0 auto;
+      padding: 0;
+      padding-top: 75px;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      color: black;
+      background: whitesmoke;
+      letter-spacing: 20px;
+      mix-blend-mode: screen;
+      display: inline-block;
+      width: 100%;
+      height: 65vh; }
+
+main {
+  margin-top: 75px;
+  padding-bottom: 50px; }
+  main .notes-add {
+    text-align: center;
+    padding-top: 25px; }
+    main .notes-add a {
+      padding: 10px 30px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      color: #f5f5f5;
+      background: #ff7148;
+      font-family: "American Captain", sans-serif;
+      transition: background 0.5s, border-radius 0.5s;
+      font-size: 1.1rem;
+      letter-spacing: 2px; }
+      main .notes-add a:hover {
+        background: #ff4915;
+        border-radius: 5px; }
+  main .selection-head, main .char-select, main .game-select {
+    width: 80%;
+    max-width: 1250px;
+    margin: 0 auto; }
+    main .selection-head h2, main .char-select h2, main .game-select h2 {
+      font-size: 1.875rem;
+      text-align: center; }
+  main .char-select, main .game-select {
+    text-align: center; }
+    main .char-select a, main .game-select a {
+      padding: 10px 30px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      color: #f5f5f5;
+      background: #3c3c3c;
+      font-family: "Falling Sky", sans-serif;
+      transition: background 0.5s, border-radius 0.5s; }
+      main .char-select a:hover, main .game-select a:hover {
+        background: #232323;
+        border-radius: 5px; }
+    main .char-select select, main .game-select select {
+      background: #3c3c3c;
+      border: 0;
+      color: #f5f5f5;
+      padding: 5px;
+      margin-right: 10px;
+      font-family: "Falling Sky", sans-serif; }
+    main .char-select .opp-character, main .game-select .opp-character {
+      margin-left: 10px; }
+    main .char-select .button-break, main .game-select .button-break {
+      display: none; }
+
+.char-notes {
+  width: 80%;
+  max-width: 1250px;
+  margin: 0 auto; }
+  .char-notes .button-break {
+    display: none; }
+  .char-notes ul {
+    padding-left: 0; }
+  .char-notes select {
+    background: #3c3c3c;
+    border: 0;
+    color: #f5f5f5;
+    padding: 5px;
+    margin-right: 10px;
+    font-family: "Falling Sky", sans-serif; }
+  .char-notes .wrapper {
+    padding-top: 10px;
+    text-align: center; }
+    .char-notes .wrapper a {
+      padding: 10px 30px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      color: #f5f5f5;
+      background: #3c3c3c;
+      font-family: "Falling Sky", sans-serif;
+      transition: background 0.5s, border-radius 0.5s; }
+      .char-notes .wrapper a:hover {
+        background: #232323;
+        border-radius: 5px; }
+      .char-notes .wrapper a:last-of-type {
+        margin-left: 10px;
+        margin-right: 0; }
+
+.char-notes ul li, .char-notes .wrapper {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none; }
+
+.char-notes ul li {
+  list-style-type: none;
+  list-style-position: outside; }
+  .char-notes ul li .note-type {
+    color: #ff7148;
+    text-transform: capitalize; }
+
+.char-notes ul li.show, .char-notes .wrapper.show {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s;
+  display: block; }
+
+footer {
+  background: #565656;
+  color: #f5f5f5;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  width: 100%; }
+  footer .wrapper {
+    width: 80%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; }
+    footer .wrapper a {
+      color: #f5f5f5;
+      display: inline-block;
+      font-size: 17.5px;
+      padding: 2px;
+      transition: background 0.5s, color 0.5s; }
+      footer .wrapper a:hover {
+        background: #f5f5f5;
+        color: #ff997b; }
+    footer .wrapper .copyright {
+      padding-top: 2.5px;
+      width: 50%; }
+    footer .wrapper .social-media {
+      width: 50%;
+      text-align: right;
+      padding-right: 7.5%; }
+
+.add-notes-popup {
+  text-align: center;
+  padding: 20px;
+  padding-top: 40px;
+  margin: 0 auto;
+  display: none;
+  border: 1px #ff7148 solid;
+  border-radius: 5px;
+  box-shadow: 0 0 15px #000; }
+  .add-notes-popup.make-visible {
+    display: block;
+    z-index: 30;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background: #f5f5f5; }
+  .add-notes-popup .add-exit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px; }
+    .add-notes-popup .add-exit-button a {
+      color: #ff7148; }
+  .add-notes-popup h4 {
+    text-align: left; }
+  .add-notes-popup select {
+    background: #ff7148;
+    border: 0;
+    color: #f5f5f5;
+    padding: 5px;
+    margin-right: 10px;
+    font-family: "Falling Sky", sans-serif; }
+  .add-notes-popup textarea {
+    background: #f5f5f5;
+    border: 1px #ff7148 solid;
+    font-family: "Falling Sky", sans-serif;
+    color: #ff7148; }
+  .add-notes-popup button {
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    color: #f5f5f5;
+    background: #ff7148;
+    font-family: "Falling Sky", sans-serif;
+    transition: background 0.5s, border-radius 0.5s;
+    border: 0;
+    margin-top: 20px; }
+    .add-notes-popup button:hover {
+      background: #ff4915;
+      border-radius: 5px; }
+
+@media (max-width: 414px) {
+  header {
+    height: auto;
+    width: 100%; }
+    header.main-page-head {
+      background: #ff997b;
+      z-index: 10; }
+    header .login {
+      display: none;
+      flex-direction: column;
+      width: 95%;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      z-index: 9;
+      top: 12.5px;
+      left: 2.5%;
+      border: 1px #ff7148 solid;
+      border-radius: 5px;
+      padding-bottom: 75px;
+      box-shadow: 0 0 15px #000; }
+      header .login .username, header .login .password, header .login .login-button, header .login .register-button {
+        margin-right: 0;
+        padding-right: 0;
+        margin-bottom: 15px; }
+        header .login .username input, header .login .password input, header .login .login-button input, header .login .register-button input {
+          border: 1px #ff7148 solid;
+          border-radius: 3px; }
+        header .login .username a, header .login .password a, header .login .login-button a, header .login .register-button a {
+          font-size: 0.8rem;
+          padding: 5px 15px; }
+      header .login .username {
+        margin-top: 50px; }
+      header .login .exit-button {
+        position: absolute;
+        top: 12.5px;
+        right: 5px;
+        z-index: 10;
+        width: auto;
+        height: auto;
+        display: inline-block; }
+        header .login .exit-button a {
+          padding: 0;
+          font-size: 1.675rem; }
+    header .responsive {
+      display: block;
+      background: #f5f5f5; }
+    header h3 {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 5%;
+      font-size: 25px;
+      color: #ff7148;
+      font-family: "American Captain", sans-serif;
+      margin-top: 14.5px;
+      text-align: left;
+      max-width: 80%;
+      letter-spacing: 2px; }
+    header .mobile-menu {
+      display: block;
+      position: absolute;
+      top: 13px;
+      right: 5%;
+      font-size: 20px; }
+      header .mobile-menu a {
+        color: #ff7148; }
+    header .wrapper {
+      display: none; }
+  main {
+    margin-top: 30px;
+    padding-bottom: 20px; }
+    main .selection-head h2, main .char-select h2, main .game-select h2 {
+      font-size: 1.2rem; }
+    main .notes-add a {
+      font-size: 0.8rem;
+      margin-top: 10px;
+      margin-left: 5px;
+      padding: 5px 15px; }
+    main .char-select, main .game-select, main .char-notes {
+      font-size: 0.72rem; }
+      main .char-select select, main .game-select select, main .char-notes select {
+        font-size: 0.72rem;
+        margin-right: 5px;
+        padding: 1px; }
+      main .char-select .opp-character, main .game-select .opp-character, main .char-notes .opp-character {
+        margin-left: 5px;
+        margin-right: 0; }
+      main .char-select .note-filter, main .game-select .note-filter, main .char-notes .note-filter {
+        margin: 0; }
+      main .char-select a, main .game-select a, main .char-notes a {
+        margin-top: 10px;
+        margin-left: 5px;
+        padding: 5px 15px; }
+        main .char-select a:first-of-type, main .game-select a:first-of-type, main .char-notes a:first-of-type {
+          margin-left: 0px; }
+        main .char-select a.desktop, main .game-select a.desktop, main .char-notes a.desktop {
+          display: none; }
+      main .char-select .button-break, main .game-select .button-break, main .char-notes .button-break {
+        display: block; }
+        main .char-select .button-break a, main .game-select .button-break a, main .char-notes .button-break a {
+          padding: 5px 15px; }
+  footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.6rem; }
+    footer .wrapper {
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 100%; }
+      footer .wrapper .copyright {
+        width: 50%;
+        text-align: left; }
+      footer .wrapper .social-media {
+        width: 50%; }
+        footer .wrapper .social-media a {
+          font-size: 0.6rem;
+          text-align: right; }
+  .add-notes-popup select {
+    font-size: 0.72rem;
+    margin-right: 5px;
+    padding: 1px; }
+  .add-notes-popup button {
+    padding: 5px 15px; }
+  .add-notes-popup textarea {
+    width: 250px;
+    font-size: 0.72rem; }
+  .add-notes-popup h4 {
+    font-size: 0.94rem; } }

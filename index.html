@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Initial responsive setup -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteZ: Your Gaming Matchup Note App</title>
+
+    <!-- Load external styles -->
+    <link rel="stylesheet" type="text/css" href="public/styles/style.css">
+
+    <!-- Load favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="img/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="img/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="img/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="img/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="img/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="img/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="img/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="img/mstile-310x310.png" />
+
+    <!-- Load fontawesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  </head>
+  <body>
+    <header class="main-page-head head">
+      <h3 data-i18n="title">NoteZ</h3>
+      <div class="mobile-menu">
+        <a href="" class="icon"><i class="fas fa-bars"></i></a>
+      </div>
+
+      <!-- Login Prompt -->
+      <div class="login">
+        <div class="exit-button">
+          <a href="" class="icon"><i class="far fa-window-close"></i></a>
+        </div>
+        <div class="username">
+          <input type="text" name="user" id="user" placeholder="username">
+        </div>
+        <div class="password">
+          <input type="password" name="pass" id="pass" placeholder="password" type="text">
+        </div>
+        <div class="login-button">
+          <a href="#" class="button"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+        <div class="register-button">
+          <a href="#" class="button"><i class="fas fa-user-plus"></i> Sign-up</a>
+        </div>
+      </div>
+
+      <!-- Heading -->
+      <div class="wrapper">
+        <h1 data-i18n="title">NoteZ</h1>
+      </div>
+    </header>
+
+    <main class="clearfix">
+      <section class="notes-add">
+        <a href="" class="add-notes-button-launch"><i class="fas fa-plus"></i> Add Notes</a>
+      </section>
+
+      <section class="selection-head">
+        <h2>Select your game:</h2>
+      </section>
+
+      <section class="game-select clearfix">
+        <select class="your-game" name="your-game">
+          <!-- Empty drop-down item to prevent the first game from showing by default with no characters underneath. Shows user that input is required. The list will populate below the empty item. -->
+          <option value="" disabled selected>--Select your game--</option>
+        </select>
+      </section>
+
+      <section class="selection-head">
+        <h2>Select your matchup:</h2>
+      </section>
+      <section class="char-select clearfix">
+        <select class="your-character" name="your-character">
+          <option value="" disabled selected>--Your character--</option>
+        </select>
+        vs.
+        <select class="opp-character" name="opp-character">
+          <option value="" disabled selected>--Their character--</option>
+        </select>
+
+        <a href="#stick" class="button show-notes desktop"><i class="fas fa-eye"></i> Show Notes</a>
+
+        <!-- Create separate button that will display on mobile devices. -->
+        <div class="button-break">
+          <a href="#stick" class="button show-notes mobile"><i class="fas fa-eye"></i> Show Notes</a>
+        </div>
+      </section>
+      <section class="char-notes">
+        <div class="wrapper">
+          Filter by:
+          <select class="note-filter" name="note-filter">
+            <option value="" disabled selected>--Filter by--</option>
+          </select>
+          <a href="#stick" class="button filter desktop"><i class="fas fa-filter"></i> Filter</a>
+          <a href="#stick" class="button show-all desktop"><i class="fas fa-sync-alt"></i> Show All</a>
+
+          <!-- Create separate buttons that will display on mobile devices. -->
+          <div class="button-break">
+            <a href="#stick" class="button filter mobile"><i class="fas fa-filter"></i> Filter</a>
+            <a href="#stick" class="button show-all mobile"><i class="fas fa-sync-alt"></i> Show All</a>
+          </div>
+        </div>
+        <div class="notes" id="stick">
+          <ul>
+
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="wrapper">
+        <div class="copyright">
+          © 2018 Corey Lanier
+        </div>
+        <div class="social-media">
+          <a href="http://twitter.com/notez_app" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://fb.me/appnotez" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Form for adding notes -->
+    <div class="add-notes-popup">
+      <div class="add-exit-button">
+        <a href="" class="icon"><i class="far fa-window-close"></i></a>
+      </div>
+      <form class="add-notes-form" id="add-notes">
+        <div class="add-notes-game">
+          <h4>Game:</h4>
+          <select class="your-game" name="gameShorthand">
+            <option value="" disabled selected>--Select your game--</option>
+          </select>
+        </div>
+        <div class="add-notes-matchup">
+          <h4>Matchup:</h4>
+          <select class="your-character" name="yourCharacter">
+            <option value="" disabled selected>--Your character--</option>
+          </select>
+
+          vs.
+
+          <select class="opp-character" name="opponentCharacter">
+            <option value="" disabled selected>--Their character--</option>
+          </select>
+        </div>
+        <div class="add-notes-type">
+          <h4>Type of Note:</h4>
+
+          <select class="note-type" name="noteType">
+            <option value="" disabled selected>--Note type--</option>
+          </select>
+        </div>
+        <div class="add-notes-note">
+          <h4>Note:</h4>
+          <textarea name="note" rows="2" cols="50"></textarea>
+        </div>
+        <div class="add-notes-submit">
+          <button type="submit" class="notes-add-submit"><i class="far fa-plus-square"></i> Add</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Jquery i18n -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.fallbacks.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.emitter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.emitter.bidi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.language.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.messagestore.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.parser.min.js"></script>
+
+    <!-- _.js -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+    <!-- Tabletop -->
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+
+    <!-- Scripts -->
+    <script src="public/scripts/main.js"></script>
+    <script src="public/scripts/main-jquery_i18n.js"></script>
+  </body>
+</html>
