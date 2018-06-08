@@ -313,6 +313,18 @@ main {
       main .char-select a:hover, main .game-select a:hover {
         background: #232323;
         border-radius: 5px; }
+      main .char-select a.show-notes, main .game-select a.show-notes {
+        padding: 10px 30px;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        color: #f5f5f5;
+        background: #ff7148;
+        font-family: "Falling Sky", sans-serif;
+        transition: background 0.5s, border-radius 0.5s; }
+        main .char-select a.show-notes:hover, main .game-select a.show-notes:hover {
+          background: #ff4915;
+          border-radius: 5px; }
     main .char-select select, main .game-select select {
       background: #3c3c3c;
       border: 0;
@@ -328,11 +340,13 @@ main {
 .char-notes {
   width: 80%;
   max-width: 1250px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 25px; }
   .char-notes .button-break {
     display: none; }
   .char-notes ul {
-    padding-left: 0; }
+    padding-left: 0;
+    margin-top: 50px; }
   .char-notes select {
     background: #3c3c3c;
     border: 0;
